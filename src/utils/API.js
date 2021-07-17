@@ -1,4 +1,9 @@
-import { _getUsers, _getQuestions, _saveQuestion, _saveQuestionAnswer } from './_DATA'
+import { 
+    _getUsers, 
+    _getQuestions, 
+    _saveQuestion, 
+    _saveQuestionAnswer 
+} from './_DATA.js'
 
 /**
  * First, get data from the fake database at _DATA.js that I make by this function
