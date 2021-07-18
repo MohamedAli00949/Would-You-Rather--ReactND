@@ -15,16 +15,22 @@ class SigninPage extends Component {
             userLogedIn : userLogedIn,
         }))
 
+        const LoginButton =  document.getElementById('login-button');
+        LoginButton.removeAttribute('disabled')
+    }
+
+    handleClick = (e) => {
+        e.preventDefault()
+
+        const { userLogedIn } = this.state;
         const { dispatch } = this.props;
 
         dispatch(setAuthedUser(userLogedIn))
 
         this.setState({ hasLoged: true, })
         console.log('the authed user', userLogedIn)
-
-        const LoginButton =  document.getElementById('login-button');
-        LoginButton.removeAttribute('disabled')
     }
+
 
     render () {
         const { myUsers } = this.props; 
@@ -34,15 +40,15 @@ class SigninPage extends Component {
                 <h3>Welcome to the Would You Rather App!</h3>
                 <p>Please sign in to continue</p>
                 <h2>Sign in</h2>
-                <form className='login-form'>
+                <form className='login-form' onSubmit={this.handleClick}>
                     <select onChange={this.handleChange}>
                         <option value='' >Select User</option>
                         {myUsers.map((user) => (
                         <option  key={user.id} value={user.id} >
-                            <p>{user.name}</p><img src={user.avetar} alt={`Avatar of ${user.name}`} />
+                            {user.name}
                         </option>
                     ))}</select>
-                    <button id='login-button' onClick={(e) => e.preventDefault()} disabled>
+                    <button id='login-button' type='submit'  disabled>
                         Sign In
                     </button>
                 </form>
