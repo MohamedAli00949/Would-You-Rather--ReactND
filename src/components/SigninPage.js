@@ -13,10 +13,9 @@ class SigninPage extends Component {
 
         this.setState(() => ({
             userLogedIn : userLogedIn,
+            hasLoged: true,
         }))
 
-        const LoginButton =  document.getElementById('login-button');
-        LoginButton.removeAttribute('disabled')
     }
 
     handleClick = (e) => {
@@ -27,13 +26,13 @@ class SigninPage extends Component {
 
         dispatch(setAuthedUser(userLogedIn))
 
-        this.setState({ hasLoged: true, })
         console.log('the authed user', userLogedIn)
     }
 
 
     render () {
         const { myUsers } = this.props; 
+        const hasLoged = this.state.hasLoged
 
         return (
             <div className='login'>
@@ -48,7 +47,7 @@ class SigninPage extends Component {
                             {user.name}
                         </option>
                     ))}</select>
-                    <button id='login-button' type='submit'  disabled>
+                    <button id='login-button' type='submit'  disabled={hasLoged === false}>
                         Sign In
                     </button>
                 </form>
@@ -62,7 +61,7 @@ const mapStateToProps = ({ users }) => {
         myUsers: Object.keys(users).map((id) => ({
             id: id,
             name: users[id].name,
-            avetar: users[id].avetar
+            avetar: users[id].avetar,
         }))
     }
 }
