@@ -43,3 +43,17 @@ ul {
 .active-button {
   font-weight: bold;
 }
+.active-link {
+  font-weight: bold;
+  color: rgb(230, 230, 230);
+  background-color: rgb(65, 65, 65);
+  padding: 5px;
+  margin: 10px;
+}
+nav ul{
+  height: 100px;
+  background-color: rgb(156, 156, 204);
+}
+ul li {
+  margin: 10px;
+}

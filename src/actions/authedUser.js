@@ -1,4 +1,5 @@
 export const SET_AUTHED_USER = 'SET_AUTHED_USER'
+export const RESET_AUTHED_USER = 'RESET_AUTHED_USER'
 
 export const setAuthedUser = (id) => {
     return {
@@ -6,4 +7,9 @@ export const setAuthedUser = (id) => {
         id,
     }
 };
+export const resetAuthedUser = () =>{
+    return {
+        type: RESET_AUTHED_USER
+    }
+}
 

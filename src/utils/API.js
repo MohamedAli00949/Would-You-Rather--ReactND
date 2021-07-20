@@ -24,8 +24,8 @@ export const saveQuestion = (question) => {
     return _saveQuestion(question)
 }
 
-export const saveQuestionAnswer = (authedUser, questionId, answer) => {
-    return _saveQuestionAnswer({ authedUser, questionId, answer })
+export const saveQuestionAnswer = (answer) => {
+    return _saveQuestionAnswer(answer)
 }
 
 

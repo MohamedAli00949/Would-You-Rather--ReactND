@@ -29,14 +29,14 @@ class Dashboard extends Component {
                         className='answer-q' onClick={this.handleClick}
                         disabled={this.state.questionList === 'answered'}
                         >
-                            Answered <snap>{myAnsweredQuestions.length}</snap>
+                            Answered <strong>{myAnsweredQuestions.length}</strong>
                     </button>
                 </div>
                 <div>
                     <button type='button' data-questions='unanswered' 
                         className='answer-q' onClick={this.handleClick}
                         disabled={this.state.questionList === 'unanswered'}
-                    >Unanswered <span>{myUnansweredQuestions.length}</span></button>
+                    >Unanswered <strong>{myUnansweredQuestions.length}</strong></button>
                 </div>
                 <ul className='questions'>
                     <li className='question-list '>
@@ -94,7 +94,7 @@ const mapStateToProps = ({ authedUser, questions, users }) => {
         .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
 
     const myUnansweredQuestions = Object.keys(questions)
-        .filter((id) => !users[authedUser].answers.hasOwnProperty(id))
+        .filter((id) => !myAuthedUser.answers.hasOwnProperty(id))
         .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
 
     return {
