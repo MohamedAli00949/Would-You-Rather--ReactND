@@ -1,5 +1,5 @@
 import { RECEIVE_USERS } from "../actions/users"
-import { ADD_ANSWER, ADD_QUESTION } from "../actions/add";
+import { ADD_ANSWER, ADD_QUESTION } from "../actions/questions";
 
 const users = (state ={}, action) => {
     switch (action.type) {
@@ -8,18 +8,20 @@ const users = (state ={}, action) => {
                 ...state,
                 ...action.users
             }
-        case ADD_ANSWER : 
-            const { qid, answer, authedUser } = action.answerInfo;
-            return {
-                ...state,
-                [authedUser] : {
-                    ...state[authedUser],
-                    answers : {
-                        ...state[authedUser].answers,
-                        [qid]: answer
-                    }
-                }
-            }
+            case ADD_ANSWER:
+			const { qid, answer, authedUser } = action.answer;
+
+			return {
+				...state,
+				[authedUser]: {
+					...state[authedUser],
+					answers: {
+						...state[authedUser].answers,
+						[qid]: answer
+					}
+				}
+			};
+
         case ADD_QUESTION : 
             return {
                 ...state,

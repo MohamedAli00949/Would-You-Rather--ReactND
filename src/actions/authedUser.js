@@ -9,7 +9,7 @@ export const setAuthedUser = (id) => {
 };
 export const resetAuthedUser = () =>{
     return {
-        type: RESET_AUTHED_USER
+        type: RESET_AUTHED_USER,
     }
 }
 

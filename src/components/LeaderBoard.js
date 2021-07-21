@@ -15,7 +15,7 @@ class LeaderBoard extends Component {
     }
 }
 
-const mapStateToProps = ({users}) => {
+const mapStateToProps = ({ users }) => {
     return {
         usersIds: Object.keys(users).sort((a,b) => 
             (Object.keys(users[b].answers).length + users[b].questions.length) - (Object.keys(users[a].answers).length + users[a].questions.length))

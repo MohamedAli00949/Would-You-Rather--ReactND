@@ -11,14 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a{
+  text-decoration: none;
+}
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 120px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  float: left;
+  padding: 10px;
+  position: relative;
+  transform: translate(40px, -20px);
 }
 ul {
   list-style: none;
@@ -34,6 +40,20 @@ ul {
   text-align: center;
   margin: 30px;
 }
+.question-button h3 {
+  font-size: 30px;
+}
+.question-button p {
+  font-size: 20px;
+}
+.question-button button {
+  font-size: 26px;
+  background-color: aquamarine;
+  padding: 14px;
+  font-weight: 600;
+  border: 1px solid #9b9b9b;
+  border-radius: 16px;
+}
 .unactive {
   display: none;
 }
@@ -46,14 +66,202 @@ ul {
 .active-link {
   font-weight: bold;
   color: rgb(230, 230, 230);
-  background-color: rgb(65, 65, 65);
-  padding: 5px;
-  margin: 10px;
+  background-color: rgb(65 65 65 / 29%);
+  padding: 6px;
+  margin: 0px;
+  border: 2px solid;
+  border-radius: 10px;
 }
 nav ul{
-  height: 100px;
+  height: 72px;
   background-color: rgb(156, 156, 204);
+  display: flex;
+  position: relative;
+  top: -25px;
+  font-size: 25px;
+  font-family: inherit;
 }
 ul li {
   margin: 10px;
+}
+.user p {
+  margin: 0;
+  position: relative;
+  transform: translate(53px, 0px);
+  color: #00ffffcf;
+}
+.user .nav-aratar {
+  width: 62px;
+  position: relative;
+  transform: translate(300px, -40px);
+  -webkit-transform: translate(300px, -40px);
+  -moz-transform: translate(300px, -40px);
+  -ms-transform: translate(300px, -40px);
+  -o-transform: translate(300px, -40px);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.user button {
+  font-size: 30px;
+  position: relative;
+  transform: translate(310px, -61px);
+  border-radius: 7px;
+  background: #7fffd4c7;
+  margin: 8px;
+  padding: 10px;
+}
+.login{
+  position: absolute;
+  text-align: center;
+  top: 12%;
+  background: #ffbd6729;
+  padding: 28px;
+  border-radius: 27px;
+  border: 5px solid #ffbd67ad;
+  transform: translate(58%, 28%);
+}
+.login-form select {
+  font-size: 30px;
+  margin: 6px 22px;
+  background: #ffffff40;
+  padding: 12px;
+  text-align: center;
+}
+.login-form button{
+  font-size: 30px;
+  padding: 10px;
+  background: #7fff0066;
+  border-radius: 12px;
+}
+
+.answer-q {
+  float: left;
+  width: 30%;
+  font-size: 30px;
+  padding: 4px;
+  margin: 20px;
+  position: relative;
+  transform: translate(7px, -40px);
+}
+ul.questions {
+  position: relative;
+  transform: translate(10px, 59px);
+}
+.question-list h2 {
+  text-align: center;
+  position: relative;
+  right: 34%;
+}
+.unanswered-q {
+  width: 60%;
+  background: antiquewhite;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.unanswered-q h3 {
+  background: #f0f8ff85;
+  margin: 0;
+  padding: 20px;
+  width: 99%;
+  border-radius: 20px;
+  position: relative;
+  transform: translate(8px, -20px);
+  right: 26px;
+  border: 1px solid #ccc;
+  text-align: initial;
+  font-size: 28px;
+}
+.unanswered-q h2 {
+  margin: 0 0 25px 0;
+  font-size: 32px;
+}
+.unanswered-q .option {
+  font-size: 25px;
+}
+.answerded-question {
+  width: 60%;
+  background: antiquewhite;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.answerded-question h2 {
+  background: #f0f8ff85;
+  margin: 0;
+  padding: 20px;
+  width: 99%;
+  border-radius: 20px;
+  position: relative;
+  transform: translate(8px, -20px);
+  right: 26px;
+  border: 1px solid #ccc;
+  text-align: initial;
+  font-size: 28px;
+}
+.optionOne,
+.optionTwo {
+  background-color: #ffffff81;
+  text-align: inherit;
+  margin-left: 32%;
+  padding: 5px;
+  margin-bottom: 5%;
+  border-radius: 14px;
+}
+.option input{
+  width: 20px;
+  height: 20px;
+  margin: 15px;
+  position: relative;
+  top: 3px;
+}
+.submit-button {
+  font-size: 25px;
+  margin: 16px;
+  padding: 10px;
+  background: #deb88769;
+  border-radius: 9px;
+  border: 2px solid #d9c8c8;
+}
+.new-question {
+  margin: 4% 8%;
+  background: beige;
+  padding: 1.5% 4%;
+  border: 2px solid #cccccc9c;
+  text-align: center;
+  border-radius: 20px;
+}
+.new-question input {
+  font-size: 30px;
+  width: 48%;
+  margin: 8px;
+}
+.new-question button {
+  font-size: 30px;
+  width: 48%;
+  margin: 8px;
+  background: #d4ffffcf;
+}
+.leader-board li {
+  background-color: aliceblue;
+  margin: 20px;
+  padding: 30px 20px;
+  border: 2px solid #cccccca8;
+  border-radius: 20px;
+}
+.leader-board li .user-details {
+  float: unset;
+  width: 70%;
+  text-align: center;
+  font-size: 25px;
+}
+.leader-board li h2 {
+  text-align: center;
+  font-size: 40px;
+  font-family: cursive;
 }

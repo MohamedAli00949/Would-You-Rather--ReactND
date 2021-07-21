@@ -42,7 +42,7 @@ class Dashboard extends Component {
                     <li className='question-list '>
                         {this.state.questionList === 'unanswered' && (
                             <div>
-                                <h3>Unanswered Questions</h3>
+                                <h2>Unanswered Questions</h2>
                             {myUnansweredQuestions.length > 0 
                                 ? (
                                     <ul className='unanswered-questions'>
@@ -62,7 +62,7 @@ class Dashboard extends Component {
                     <li className='question-list'> 
                         {this.state.questionList === 'answered' && (
                             <div>
-                                <h3>Answered Questions</h3>
+                                <h2>Answered Questions</h2>
                                 {myAnsweredQuestions.length > 0 
                                     ? (
                                         <ul className='answered-questions'>

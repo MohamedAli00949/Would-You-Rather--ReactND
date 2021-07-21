@@ -30,9 +30,9 @@ class Nav extends Component {
                         </NavLink>
                     </li>
                     <li>{authedUser !== null && (
-                        <div>
+                        <div className='user'>
                             <p>Hello, {me.name}</p>
-                            <img src={me.avatarURL} alt= {`Avatar Of ${me.name}`} />
+                            <img className='nav-aratar' src={me.avatarURL} alt= {`Avatar Of ${me.name}`} />
                             <button onClick={this.handleLogout}>
                                 Logout
                             </button>

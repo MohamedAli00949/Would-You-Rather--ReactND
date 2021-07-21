@@ -35,22 +35,24 @@ class SigninPage extends Component {
         const hasLoged = this.state.hasLoged
 
         return (
-            <div className='login'>
-                <h3>Welcome to the Would You Rather App!</h3>
-                <p>Please sign in to continue</p>
-                <h2>Sign in</h2>
-                <form className='login-form' onSubmit={this.handleClick}>
-                    <select onChange={this.handleChange}>
-                        <option value='' >Select User</option>
-                        {myUsers.map((user) => (
-                        <option  key={user.id} value={user.id} >
-                            {user.name}
-                        </option>
-                    ))}</select>
-                    <button id='login-button' type='submit'  disabled={hasLoged === false}>
-                        Sign In
-                    </button>
-                </form>
+            <div>
+                <div className='login'>
+                    <h3>Welcome to the Would You Rather App!</h3>
+                    <p>Please sign in to continue</p>
+                    <h2>Sign in</h2>
+                    <form className='login-form' onSubmit={this.handleClick}>
+                        <select onChange={this.handleChange}>
+                            <option value='' >Select User</option>
+                            {myUsers.map((user) => (
+                            <option  key={user.id} value={user.id} >
+                                {user.name}
+                            </option>
+                        ))}</select>
+                        <button id='login-button' type='submit'  disabled={hasLoged === false}>
+                            Sign In
+                        </button>
+                    </form>
+                </div>
             </div>
         )
     }
