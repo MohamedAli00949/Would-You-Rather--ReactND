@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { formatQuestion } from '../utils/helper'
 import { handleAddAnswer } from '../actions/shared'
+import { Redirect } from 'react-router-dom'
 
 class MyUnansweredQuestion extends Component {
 
@@ -16,15 +17,18 @@ class MyUnansweredQuestion extends Component {
         }))
     }
 
-    handleSubmit = (id, e) => {
-        const answer = this.state;
+    handleSubmit = (qid, e) => {
+        const answer = this.state.myOption;
         const { dispatch, authedUser } = this.props;
         e.preventDefault()
         // const { dispatch, authedUser} = this.props;
-        dispatch(handleAddAnswer(authedUser, id, answer))
+        dispatch(handleAddAnswer( qid, answer, authedUser ))
     }
     render(){
-        const { question } =this.props
+        const { question } = this.props
+        if(!question) {
+            return <Redirect to='/404' />
+        }
         const { id, optionOne, optionTwo, name, avatar} = question
         const {myOption} = this.state
         return(

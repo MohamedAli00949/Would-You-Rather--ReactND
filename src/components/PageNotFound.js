@@ -9,7 +9,7 @@ class PageNotFound extends React.Component {
                     textAlign: 'center',
                 }}>
                     <h1 style={{
-                        color: '#ff0',
+                        color: 'rgb(255 0 0 / 82%)',
                         fontFamily: 'fantasy'
                     }} >
                         404 ERROR
